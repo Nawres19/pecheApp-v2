@@ -42,3 +42,5 @@ android {
 flutter {
     source = "../.."
 }
+// Pour build.gradle.kts
+apply(plugin = "com.google.gms.google-services")

@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:peche_app/screens/auth/login_screen.dart';
 import 'package:peche_app/screens/client/home_screen.dart';
@@ -10,7 +11,14 @@ import 'package:peche_app/utils/app_theme.dart';
 import 'package:provider/provider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-void main() {
+void main() async {
+  // Assurez-vous que Flutter est initialisé
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialisez Firebase
+  await Firebase.initializeApp();
+
+  // Lancez votre application comme avant
   runApp(
     MultiProvider(
       providers: [
